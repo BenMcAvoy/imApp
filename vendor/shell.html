@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>imApp</title>
+
+    <!-- SEO metadata -->
+		<meta name="description" content="A high-performance ImGui application running in the browser.">
+    <meta name="keywords" content="WebGL, JavaScript, Canvas, Game, App">
+
+    <style>
+        /* CSS Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Body styling */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        /* Game canvas styling */
+        .game {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+    </style>
+</head>
+<body>
+    <canvas class="game" id="canvas" aria-label="Game Canvas" role="img" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
+    <script type="text/javascript">
+        const Module = {
+            preRun: [],
+            postRun: [],
+            print: function(...args) {
+                console.log(args.join(' '));
+            },
+            printErr: function(...args) {
+                console.error(args.join(' '));
+            },
+            canvas: document.getElementById('canvas'),
+            setStatus: function(text) {
+                console.log("status: " + text);
+            },
+            monitorRunDependencies: function(left) {
+                console.log("monitor run deps: " + left);
+            }
+        };
+
+        window.addEventListener('error', function(event) {
+            console.log("Error: " + event.message);
+        });
+    </script>
+    {{{ SCRIPT }}}
+</body>
+</html>
