@@ -1,0 +1,5 @@
+build
+.cache
+
+vcpkg_installed
+vcpkg_manifest-install.log

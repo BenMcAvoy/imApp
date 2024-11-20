@@ -1,0 +1,15 @@
+{
+  "dependencies": [
+    "fmt",
+    {
+      "name": "imgui",
+      "features": [
+        "docking-experimental"
+      ]
+    },
+    "sokol",
+    "sol2",
+    "spdlog",
+    "luajit"
+  ]
+}

@@ -1,0 +1,49 @@
+Detecting compiler hash for triplet x64-linux...
+Compiler found: /usr/bin/c++
+All requested packages are currently installed.
+Total install time: 3.91 us
+The package fmt provides CMake targets:
+
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt)
+
+    # Or use the header-only version
+    find_package(fmt CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE fmt::fmt-header-only)
+
+imgui provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(imgui CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE imgui::imgui)
+
+luajit provides pkg-config modules:
+
+  # Just-in-time compiler for Lua
+  luajit
+
+sokol is header-only and can be used from CMake via:
+
+  find_path(SOKOL_INCLUDE_DIRS "sokol_app.h")
+  target_include_directories(main PRIVATE ${SOKOL_INCLUDE_DIRS})
+
+sol2 provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(sol2 CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE sol2)
+
+sol2 provides pkg-config modules:
+
+  # C++ <-> Lua Wrapper Library
+  sol2
+
+The package spdlog provides CMake targets:
+
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog)
+
+    # Or use the header-only version
+    find_package(spdlog CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE spdlog::spdlog_header_only)
+
